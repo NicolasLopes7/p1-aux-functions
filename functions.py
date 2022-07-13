@@ -40,6 +40,23 @@ def sort(array):
                 array[i], array[j] = array[j], array[i]
     return array
 
+def sort_mode(list,mode):
+    if mode.lower() == 'asc':
+        for i in range(len(list)):
+            for j in range(i + 1, len(list)):
+                if list[i] > list[j]:
+                    list[i], list[j] = list[j], list[i]
+        
+        return list
+
+    elif mode.lower() == 'desc':
+        for i in range(len(list)):
+            for j in range(i + 1, len(list)):
+                if list[i] < list[j]:
+                    list[i], list[j] = list[j], list[i]
+        
+        return list
+
 
 def extend(original, carry):
     return original + carry
@@ -121,7 +138,6 @@ def slice(array, start, end):
         return join(newArray, '')
 
     return newArray
-
 
 def sum(array):
     total = 0
